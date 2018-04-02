@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/CLionProjects/BIAI/Chromosome.cpp
+iostream
+-
+Chromosome.h
+/root/CLionProjects/BIAI/Chromosome.h
+
+/root/CLionProjects/BIAI/Chromosome.h
+vector
+-
+
+/root/CLionProjects/BIAI/IGeneticOperator.cpp
+cstdlib
+-
+IGeneticOperator.h
+/root/CLionProjects/BIAI/IGeneticOperator.h
+stdexcept
+-
+algorithm
+-
+
+/root/CLionProjects/BIAI/IGeneticOperator.h
+Chromosome.h
+/root/CLionProjects/BIAI/Chromosome.h
+
+/root/CLionProjects/BIAI/main.cpp
+iostream
+-
+IGeneticOperator.h
+/root/CLionProjects/BIAI/IGeneticOperator.h
+
