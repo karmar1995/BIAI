@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Chromosome.h"
+#include <algorithm>
 
 Chromosome::Chromosome(int length)
 {
@@ -24,6 +25,7 @@ void Chromosome::FillEmptyChromosome()
     {
         m_Genes[i-1] = i;
     }
+    std::random_shuffle(m_Genes.begin(), m_Genes.end());
 }
 
 void Chromosome::Display()

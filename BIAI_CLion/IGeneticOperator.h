@@ -2,8 +2,8 @@
 #define BIAI_IGENETICOPERATOR_H
 
 #include "Chromosome.h"
-
-
+#include <map>
+#include <vector>
 class IMutation
 {
 public:
@@ -23,4 +23,12 @@ public:
     Chromosome Mutate(const Chromosome& toMutate) override;
 };
 
+class EdgeCrossover: public ICrossover
+{
+    void generateMapForChromosome(const Chromosome &chromosome, std::map<int, std::vector<int>>& EdgeMap);
+    std::map<int, std::vector<int>> generateEdgeMap(const std::pair<Chromosome, Chromosome>& parents);
+public:
+    EdgeCrossover();
+    std::pair<Chromosome, Chromosome> Crossover(const std::pair<Chromosome, Chromosome>& parents) override;
+};
 #endif //BIAI_IGENETICOPERATOR_H

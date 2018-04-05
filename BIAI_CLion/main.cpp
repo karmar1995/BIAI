@@ -4,13 +4,9 @@
 int main()
 {
     srand(time(NULL));
-    Chromosome test(10);
-    ScrambleMutation mutator;
-    for(int i = 0; i < 10; i++)
-    {
-        test.Display();
-        test = mutator.Mutate(test);
-    }
-
+    Chromosome p1 (10);
+    Chromosome p2 (10);
+    EdgeCrossover crossover;
+    crossover.Crossover(std::pair<Chromosome, Chromosome>(p1,p2));
     return 0;
 }

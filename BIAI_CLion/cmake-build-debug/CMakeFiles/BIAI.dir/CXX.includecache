@@ -11,6 +11,8 @@ iostream
 -
 Chromosome.h
 /root/CLionProjects/BIAI/Chromosome.h
+algorithm
+-
 
 /root/CLionProjects/BIAI/Chromosome.h
 vector
@@ -25,10 +27,16 @@ stdexcept
 -
 algorithm
 -
+list
+-
 
 /root/CLionProjects/BIAI/IGeneticOperator.h
 Chromosome.h
 /root/CLionProjects/BIAI/Chromosome.h
+map
+-
+vector
+-
 
 /root/CLionProjects/BIAI/main.cpp
 iostream
