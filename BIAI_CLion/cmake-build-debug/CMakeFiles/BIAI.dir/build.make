@@ -43,10 +43,10 @@ RM = /root/Dokumenty/clion-2017.3.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/CLionProjects/BIAI
+CMAKE_SOURCE_DIR = /root/Dokumenty/GIT/BIAI/BIAI_CLion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/CLionProjects/BIAI/cmake-build-debug
+CMAKE_BINARY_DIR = /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/BIAI.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/BIAI.dir/flags.make
 
 CMakeFiles/BIAI.dir/main.cpp.o: CMakeFiles/BIAI.dir/flags.make
 CMakeFiles/BIAI.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BIAI.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BIAI.dir/main.cpp.o -c /root/CLionProjects/BIAI/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BIAI.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BIAI.dir/main.cpp.o -c /root/Dokumenty/GIT/BIAI/BIAI_CLion/main.cpp
 
 CMakeFiles/BIAI.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BIAI.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/BIAI/main.cpp > CMakeFiles/BIAI.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Dokumenty/GIT/BIAI/BIAI_CLion/main.cpp > CMakeFiles/BIAI.dir/main.cpp.i
 
 CMakeFiles/BIAI.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BIAI.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/BIAI/main.cpp -o CMakeFiles/BIAI.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Dokumenty/GIT/BIAI/BIAI_CLion/main.cpp -o CMakeFiles/BIAI.dir/main.cpp.s
 
 CMakeFiles/BIAI.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/BIAI.dir/main.cpp.o.provides.build: CMakeFiles/BIAI.dir/main.cpp.o
 
 CMakeFiles/BIAI.dir/Chromosome.cpp.o: CMakeFiles/BIAI.dir/flags.make
 CMakeFiles/BIAI.dir/Chromosome.cpp.o: ../Chromosome.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BIAI.dir/Chromosome.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BIAI.dir/Chromosome.cpp.o -c /root/CLionProjects/BIAI/Chromosome.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BIAI.dir/Chromosome.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BIAI.dir/Chromosome.cpp.o -c /root/Dokumenty/GIT/BIAI/BIAI_CLion/Chromosome.cpp
 
 CMakeFiles/BIAI.dir/Chromosome.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BIAI.dir/Chromosome.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/BIAI/Chromosome.cpp > CMakeFiles/BIAI.dir/Chromosome.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Dokumenty/GIT/BIAI/BIAI_CLion/Chromosome.cpp > CMakeFiles/BIAI.dir/Chromosome.cpp.i
 
 CMakeFiles/BIAI.dir/Chromosome.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BIAI.dir/Chromosome.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/BIAI/Chromosome.cpp -o CMakeFiles/BIAI.dir/Chromosome.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Dokumenty/GIT/BIAI/BIAI_CLion/Chromosome.cpp -o CMakeFiles/BIAI.dir/Chromosome.cpp.s
 
 CMakeFiles/BIAI.dir/Chromosome.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/BIAI.dir/Chromosome.cpp.o.provides.build: CMakeFiles/BIAI.dir/Chromos
 
 CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o: CMakeFiles/BIAI.dir/flags.make
 CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o: ../IGeneticOperator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o -c /root/CLionProjects/BIAI/IGeneticOperator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o -c /root/Dokumenty/GIT/BIAI/BIAI_CLion/IGeneticOperator.cpp
 
 CMakeFiles/BIAI.dir/IGeneticOperator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BIAI.dir/IGeneticOperator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/BIAI/IGeneticOperator.cpp > CMakeFiles/BIAI.dir/IGeneticOperator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Dokumenty/GIT/BIAI/BIAI_CLion/IGeneticOperator.cpp > CMakeFiles/BIAI.dir/IGeneticOperator.cpp.i
 
 CMakeFiles/BIAI.dir/IGeneticOperator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BIAI.dir/IGeneticOperator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/BIAI/IGeneticOperator.cpp -o CMakeFiles/BIAI.dir/IGeneticOperator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Dokumenty/GIT/BIAI/BIAI_CLion/IGeneticOperator.cpp -o CMakeFiles/BIAI.dir/IGeneticOperator.cpp.s
 
 CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o.requires:
 
@@ -129,11 +129,36 @@ CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o.provides: CMakeFiles/BIAI.dir/IGeneti
 CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o.provides.build: CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o
 
 
+CMakeFiles/BIAI.dir/GraphNode.cpp.o: CMakeFiles/BIAI.dir/flags.make
+CMakeFiles/BIAI.dir/GraphNode.cpp.o: ../GraphNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BIAI.dir/GraphNode.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BIAI.dir/GraphNode.cpp.o -c /root/Dokumenty/GIT/BIAI/BIAI_CLion/GraphNode.cpp
+
+CMakeFiles/BIAI.dir/GraphNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BIAI.dir/GraphNode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Dokumenty/GIT/BIAI/BIAI_CLion/GraphNode.cpp > CMakeFiles/BIAI.dir/GraphNode.cpp.i
+
+CMakeFiles/BIAI.dir/GraphNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BIAI.dir/GraphNode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Dokumenty/GIT/BIAI/BIAI_CLion/GraphNode.cpp -o CMakeFiles/BIAI.dir/GraphNode.cpp.s
+
+CMakeFiles/BIAI.dir/GraphNode.cpp.o.requires:
+
+.PHONY : CMakeFiles/BIAI.dir/GraphNode.cpp.o.requires
+
+CMakeFiles/BIAI.dir/GraphNode.cpp.o.provides: CMakeFiles/BIAI.dir/GraphNode.cpp.o.requires
+	$(MAKE) -f CMakeFiles/BIAI.dir/build.make CMakeFiles/BIAI.dir/GraphNode.cpp.o.provides.build
+.PHONY : CMakeFiles/BIAI.dir/GraphNode.cpp.o.provides
+
+CMakeFiles/BIAI.dir/GraphNode.cpp.o.provides.build: CMakeFiles/BIAI.dir/GraphNode.cpp.o
+
+
 # Object files for target BIAI
 BIAI_OBJECTS = \
 "CMakeFiles/BIAI.dir/main.cpp.o" \
 "CMakeFiles/BIAI.dir/Chromosome.cpp.o" \
-"CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o"
+"CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o" \
+"CMakeFiles/BIAI.dir/GraphNode.cpp.o"
 
 # External object files for target BIAI
 BIAI_EXTERNAL_OBJECTS =
@@ -141,9 +166,10 @@ BIAI_EXTERNAL_OBJECTS =
 BIAI: CMakeFiles/BIAI.dir/main.cpp.o
 BIAI: CMakeFiles/BIAI.dir/Chromosome.cpp.o
 BIAI: CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o
+BIAI: CMakeFiles/BIAI.dir/GraphNode.cpp.o
 BIAI: CMakeFiles/BIAI.dir/build.make
 BIAI: CMakeFiles/BIAI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable BIAI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable BIAI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BIAI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +180,7 @@ CMakeFiles/BIAI.dir/build: BIAI
 CMakeFiles/BIAI.dir/requires: CMakeFiles/BIAI.dir/main.cpp.o.requires
 CMakeFiles/BIAI.dir/requires: CMakeFiles/BIAI.dir/Chromosome.cpp.o.requires
 CMakeFiles/BIAI.dir/requires: CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o.requires
+CMakeFiles/BIAI.dir/requires: CMakeFiles/BIAI.dir/GraphNode.cpp.o.requires
 
 .PHONY : CMakeFiles/BIAI.dir/requires
 
@@ -162,6 +189,6 @@ CMakeFiles/BIAI.dir/clean:
 .PHONY : CMakeFiles/BIAI.dir/clean
 
 CMakeFiles/BIAI.dir/depend:
-	cd /root/CLionProjects/BIAI/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/CLionProjects/BIAI /root/CLionProjects/BIAI /root/CLionProjects/BIAI/cmake-build-debug /root/CLionProjects/BIAI/cmake-build-debug /root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles/BIAI.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Dokumenty/GIT/BIAI/BIAI_CLion /root/Dokumenty/GIT/BIAI/BIAI_CLion /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles/BIAI.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/BIAI.dir/depend
 

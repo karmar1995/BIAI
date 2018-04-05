@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/BIAI.dir/main.cpp.o"
   "CMakeFiles/BIAI.dir/Chromosome.cpp.o"
   "CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o"
+  "CMakeFiles/BIAI.dir/GraphNode.cpp.o"
   "BIAI.pdb"
   "BIAI"
 )

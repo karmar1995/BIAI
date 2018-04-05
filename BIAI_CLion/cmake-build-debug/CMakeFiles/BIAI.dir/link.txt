@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/BIAI.dir/main.cpp.o CMakeFiles/BIAI.dir/Chromosome.cpp.o CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o  -o BIAI 
+/usr/bin/c++  -g   CMakeFiles/BIAI.dir/main.cpp.o CMakeFiles/BIAI.dir/Chromosome.cpp.o CMakeFiles/BIAI.dir/IGeneticOperator.cpp.o CMakeFiles/BIAI.dir/GraphNode.cpp.o  -o BIAI 

@@ -48,10 +48,10 @@ RM = /root/Dokumenty/clion-2017.3.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/CLionProjects/BIAI
+CMAKE_SOURCE_DIR = /root/Dokumenty/GIT/BIAI/BIAI_CLion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/CLionProjects/BIAI/cmake-build-debug
+CMAKE_BINARY_DIR = /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles /root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/CLionProjects/BIAI/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ Chromosome.cpp.s:
 	$(MAKE) -f CMakeFiles/BIAI.dir/build.make CMakeFiles/BIAI.dir/Chromosome.cpp.s
 .PHONY : Chromosome.cpp.s
 
+GraphNode.o: GraphNode.cpp.o
+
+.PHONY : GraphNode.o
+
+# target to build an object file
+GraphNode.cpp.o:
+	$(MAKE) -f CMakeFiles/BIAI.dir/build.make CMakeFiles/BIAI.dir/GraphNode.cpp.o
+.PHONY : GraphNode.cpp.o
+
+GraphNode.i: GraphNode.cpp.i
+
+.PHONY : GraphNode.i
+
+# target to preprocess a source file
+GraphNode.cpp.i:
+	$(MAKE) -f CMakeFiles/BIAI.dir/build.make CMakeFiles/BIAI.dir/GraphNode.cpp.i
+.PHONY : GraphNode.cpp.i
+
+GraphNode.s: GraphNode.cpp.s
+
+.PHONY : GraphNode.s
+
+# target to generate assembly for a file
+GraphNode.cpp.s:
+	$(MAKE) -f CMakeFiles/BIAI.dir/build.make CMakeFiles/BIAI.dir/GraphNode.cpp.s
+.PHONY : GraphNode.cpp.s
+
 IGeneticOperator.o: IGeneticOperator.cpp.o
 
 .PHONY : IGeneticOperator.o
@@ -216,6 +243,9 @@ help:
 	@echo "... Chromosome.o"
 	@echo "... Chromosome.i"
 	@echo "... Chromosome.s"
+	@echo "... GraphNode.o"
+	@echo "... GraphNode.i"
+	@echo "... GraphNode.s"
 	@echo "... IGeneticOperator.o"
 	@echo "... IGeneticOperator.i"
 	@echo "... IGeneticOperator.s"

@@ -1,4 +1,4 @@
-# Install script for directory: /root/CLionProjects/BIAI
+# Install script for directory: /root/Dokumenty/GIT/BIAI/BIAI_CLion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/CLionProjects/BIAI/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

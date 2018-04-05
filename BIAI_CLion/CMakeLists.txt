@@ -3,4 +3,4 @@ project(BIAI)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(BIAI main.cpp Chromosome.cpp Chromosome.h IGeneticOperator.cpp IGeneticOperator.h)
+add_executable(BIAI main.cpp Chromosome.cpp Chromosome.h IGeneticOperator.cpp IGeneticOperator.h GraphNode.cpp GraphNode.h)

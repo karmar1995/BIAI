@@ -6,23 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/root/CLionProjects/BIAI/Chromosome.cpp
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/Chromosome.cpp
 iostream
 -
 Chromosome.h
-/root/CLionProjects/BIAI/Chromosome.h
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/Chromosome.h
 algorithm
 -
 
-/root/CLionProjects/BIAI/Chromosome.h
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/Chromosome.h
 vector
 -
 
-/root/CLionProjects/BIAI/IGeneticOperator.cpp
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/IGeneticOperator.cpp
 cstdlib
 -
 IGeneticOperator.h
-/root/CLionProjects/BIAI/IGeneticOperator.h
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/IGeneticOperator.h
 stdexcept
 -
 algorithm
@@ -30,17 +30,17 @@ algorithm
 list
 -
 
-/root/CLionProjects/BIAI/IGeneticOperator.h
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/IGeneticOperator.h
 Chromosome.h
-/root/CLionProjects/BIAI/Chromosome.h
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/Chromosome.h
 map
 -
 vector
 -
 
-/root/CLionProjects/BIAI/main.cpp
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/main.cpp
 iostream
 -
 IGeneticOperator.h
-/root/CLionProjects/BIAI/IGeneticOperator.h
+/root/Dokumenty/GIT/BIAI/BIAI_CLion/IGeneticOperator.h
 

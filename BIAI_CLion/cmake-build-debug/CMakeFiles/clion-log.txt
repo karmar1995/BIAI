@@ -1,4 +1,4 @@
-/root/Dokumenty/clion-2017.3.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /root/CLionProjects/BIAI
+/root/Dokumenty/clion-2017.3.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /root/Dokumenty/GIT/BIAI/BIAI_CLion
 -- Configuring done
 -- Generating done
--- Build files have been written to: /root/CLionProjects/BIAI/cmake-build-debug
+-- Build files have been written to: /root/Dokumenty/GIT/BIAI/BIAI_CLion/cmake-build-debug
