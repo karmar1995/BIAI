@@ -1,23 +1,36 @@
 #include "GraphNode.h"
 
-GraphNode::GraphNode(uint index) {
-    if(index==0)
-        index = ++m_numberOfNodes;
+GraphNode::GraphNode(uint index)
+{
     m_index = index;
 }
 
-std::pair<bool, auto> GraphNode::putNeighbour(const GraphNode &node) {
+std::pair<NeighboursIterator, bool> GraphNode::putNeighbour(GraphNode node) 
+{
     return m_Neighbours.insert(node);
 }
 
-std::pair<bool, auto> GraphNode::putEdge(const uint index, const double weight) {
+std::pair<EdgesIterator, bool> GraphNode::putEdge(const uint index, const double weight) 
+{
     return m_Edges.insert(std::pair<int, double>(index, weight));
 }
 
-std::pair<bool, auto> GraphNode::putEdge(const GraphNode &node, const double weight) {
-    return std::pair<bool, auto>(node.GetIndex(), weight);
+std::pair<EdgesIterator, bool> GraphNode::putEdge(const GraphNode &node, const double weight) 
+{
+    return putEdge(node.GetIndex(), weight);
 }
 
-uint GraphNode::GetIndex() const {
+uint GraphNode::GetIndex() const 
+{
     return m_index;
+}
+
+bool GraphNode::operator>(const GraphNode & rhs) const
+{
+	return m_index>rhs.GetIndex();
+}
+
+bool GraphNode::operator<(const GraphNode & rhs) const
+{
+	return m_index<rhs.GetIndex();
 }

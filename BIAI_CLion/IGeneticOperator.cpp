@@ -3,6 +3,19 @@
 #include <stdexcept>
 #include <algorithm>
 #include <list>
+#include <iostream>
+#include <iterator>
+
+void PrintMap(EdgeMap edgeMap)
+{
+	for (auto it : edgeMap)
+	{
+		std::cout << it.first << " edeges: ";
+		for (auto node : it.second)
+			std::cout << node << " ";
+		std::cout << std::endl;
+	}
+}
 
 ScrambleMutation::ScrambleMutation()
 {
@@ -11,7 +24,7 @@ ScrambleMutation::ScrambleMutation()
 
 Chromosome ScrambleMutation::Mutate(const Chromosome &toMutate)
 {
-    std::vector<int> genes = toMutate.getGenes();
+	GenesVector genes = toMutate.getGenes();
     int length = genes.size();
     const int swaps = 3;
     for(int i = 0; i < swaps; i++)
@@ -29,30 +42,115 @@ EdgeCrossover::EdgeCrossover() {
 
 }
 
-void EdgeCrossover::generateMapForChromosome(const Chromosome &chromosome, std::map<int, std::vector<int>>& EdgeMap) {
-    std::vector<int> genes = chromosome.getGenes();
+void EdgeCrossover::generateMapForChromosome(const Chromosome &chromosome, EdgeMap& edgeMap)
+{
+	GenesVector genes = chromosome.getGenes();
     for(auto it = genes.begin(); it<genes.end(); ++it)
     {
         int gene = *it;
         auto pNext = (it == (genes.end()-1)) ? genes.begin() : it+1;
         auto pPrev = (it == genes.begin()) ? genes.end()-1 : it-1;
-        EdgeMap[gene].push_back(*(pPrev));
-        EdgeMap[gene].push_back(*(pNext));
+		edgeMap[gene].push_back(*(pPrev));
+		edgeMap[gene].push_back(*(pNext));
     }
 }
 
-std::map<int, std::vector<int>> EdgeCrossover::generateEdgeMap(const std::pair<Chromosome, Chromosome> &parents) {
-    std::map<int, std::vector<int>> EdgeMap;
-    generateMapForChromosome(parents.first, EdgeMap);
-    generateMapForChromosome(parents.second, EdgeMap);
-    return EdgeMap;
+void EdgeCrossover::deleteReferencesToNode(int node, EdgeMap& edgeMap)
+{
+	for (auto edgeMapIterator : edgeMap)
+	{
+		std::vector<int> newEdgeVector;
+		auto it = std::copy_if(
+			edgeMapIterator.second.begin(), edgeMapIterator.second.end(),
+			std::back_inserter(newEdgeVector), 
+			[node](int i) 
+			{
+				return i != node;
+			} 
+		);
+		edgeMap[edgeMapIterator.first] = newEdgeVector;
+	}
+}
+
+int EdgeCrossover::PickNode(EdgesVector edgesVector, EdgeMap reducedMap)
+{
+	if (!edgesVector.empty())
+	{
+		std::sort(edgesVector.begin(), edgesVector.end());
+		auto it = std::adjacent_find(edgesVector.begin(), edgesVector.end());
+		if ( it != edgesVector.end())
+			return *it; // pick the first found duplicate
+		else
+		{
+			std::pair<int, int> curMin(255, 255);
+			for (auto node : edgesVector)
+			{
+				if (reducedMap.at(node).size() < curMin.second)
+					curMin = std::make_pair(node, reducedMap[node].size());
+				else if(reducedMap.at(node).size() == curMin.second)
+					curMin = rand()%2==0? curMin: std::make_pair(node, reducedMap[node].size());
+			}
+			return curMin.first; //pick randomly chosen node with shortest edges vector
+		}
+	}
+	return NodeNotChosen;
 }
 
 
-std::pair<Chromosome, Chromosome> EdgeCrossover::Crossover(const std::pair<Chromosome, Chromosome> &parents)
+
+
+Chromosome EdgeCrossover::createOffspring(const Chromosome & parent, EdgeMap edgeMap)
 {
-    generateEdgeMap(parents);
-    return parents;
+	int size = parent.getGenes().size();
+	Chromosome offspring(size, true);
+	offspring[--size] = parent.getGenes()[size];
+	int node = parent.getGenes()[rand() % size];
+	for (int i = 0; i < size; i++)
+	{
+		offspring[i] = node;
+		deleteReferencesToNode(node, edgeMap);
+		node = PickNode(edgeMap.at(node), edgeMap);
+		if (node == NodeNotChosen)
+		{
+			deleteReferencesToNode(offspring[size], edgeMap);
+			node = PickNode(edgeMap.at(offspring[--size]), edgeMap);
+			if (node != NodeNotChosen)
+			{
+				offspring[size--] = node;
+//				size--;
+			}
+			else
+			{
+
+			}
+		}
+	}
+	return offspring;
+}
+
+
+
+EdgeMap EdgeCrossover::generateEdgeMap(const ChromosomePair& parents)
+{
+	EdgeMap edgeMap;
+    generateMapForChromosome(parents.first, edgeMap);
+    generateMapForChromosome(parents.second, edgeMap);
+#ifdef _DEBUG
+	std::cout << "\nParent 1: ";
+	parents.first.Display();
+	std::cout << "\nParent 2: ";
+	parents.second.Display();
+	std::cout << "\nCreated original map\n" << std::endl;
+	PrintMap(edgeMap);
+	std::cout << "\n===================\n" << std::endl;
+#endif
+	return edgeMap;
+}
+
+ChromosomePair EdgeCrossover::Crossover(const ChromosomePair& parents)
+{
+	EdgeMap edgeMap = generateEdgeMap(parents);
+    return std::make_pair(createOffspring(parents.first, edgeMap), createOffspring(parents.second, edgeMap));
 }
 
 

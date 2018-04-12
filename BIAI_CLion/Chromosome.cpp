@@ -2,11 +2,12 @@
 #include "Chromosome.h"
 #include <algorithm>
 
-Chromosome::Chromosome(int length)
+Chromosome::Chromosome(int length, bool empty)
 {
     m_Genes.resize(length);
     m_Length = length;
-    FillEmptyChromosome();
+	if(!empty)
+	    FillEmptyChromosome();
 }
 
 Chromosome::Chromosome(std::vector<int> genes)
@@ -28,7 +29,7 @@ void Chromosome::FillEmptyChromosome()
     std::random_shuffle(m_Genes.begin(), m_Genes.end());
 }
 
-void Chromosome::Display()
+void Chromosome::Display() const
 {
     for(auto gene : m_Genes)
     {
@@ -36,4 +37,9 @@ void Chromosome::Display()
     }
     std::cout<<std::endl;
 
+}
+
+int & Chromosome::operator[](int index)
+{
+	return m_Genes[index];
 }
