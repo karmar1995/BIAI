@@ -17,15 +17,12 @@ void PrintMap(EdgeMap edgeMap)
 	}
 }
 
-ScrambleMutation::ScrambleMutation()
-{
-
-}
+ScrambleMutation::ScrambleMutation() {}
 
 Chromosome ScrambleMutation::Mutate(const Chromosome &toMutate)
 {
 	GenesVector genes = toMutate.getGenes();
-    int length = genes.size();
+    int length = static_cast<int>(genes.size());
     const int swaps = 3;
     for(int i = 0; i < swaps; i++)
     {
@@ -38,9 +35,7 @@ Chromosome ScrambleMutation::Mutate(const Chromosome &toMutate)
     return Chromosome(genes);
 }
 
-EdgeCrossover::EdgeCrossover() {
-
-}
+EdgeCrossover::EdgeCrossover() {}
 
 void EdgeCrossover::generateMapForChromosome(const Chromosome &chromosome, EdgeMap& edgeMap)
 {
@@ -101,10 +96,13 @@ int EdgeCrossover::PickNode(EdgesVector edgesVector, EdgeMap reducedMap)
 
 Chromosome EdgeCrossover::createOffspring(const Chromosome & parent, EdgeMap edgeMap)
 {
-	int size = parent.getGenes().size();
+	GenesVector parentGenes = parent.getGenes();
+	int size = static_cast<int>(parentGenes.size());
 	Chromosome offspring(size, true);
-	offspring[--size] = parent.getGenes()[size];
+	offspring[--size] = parentGenes[size];
+	deleteReferencesToNode(parentGenes[size], edgeMap);
 	int node = parent.getGenes()[rand() % size];
+	int reversedIndex = size;
 	for (int i = 0; i < size; i++)
 	{
 		offspring[i] = node;
@@ -112,16 +110,20 @@ Chromosome EdgeCrossover::createOffspring(const Chromosome & parent, EdgeMap edg
 		node = PickNode(edgeMap.at(node), edgeMap);
 		if (node == NodeNotChosen)
 		{
-			deleteReferencesToNode(offspring[size], edgeMap);
-			node = PickNode(edgeMap.at(offspring[--size]), edgeMap);
-			if (node != NodeNotChosen)
+			node = PickNode(edgeMap.at(offspring[reversedIndex]), edgeMap);
+			if (node == NodeNotChosen)
 			{
-				offspring[size--] = node;
-//				size--;
-			}
-			else
-			{
-
+				GenesVector tmp;
+				auto it = std::copy_if(
+					parentGenes.begin(), parentGenes.end(),
+					std::back_inserter(tmp),
+					[offspring](int i){
+						for (int j : offspring.getGenes())
+							if (j == i)	return false;
+						return true; });
+				if (tmp.size() > 0)
+					node = tmp[rand()%tmp.size()];
+ 
 			}
 		}
 	}

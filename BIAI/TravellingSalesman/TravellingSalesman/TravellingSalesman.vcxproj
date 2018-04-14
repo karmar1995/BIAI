@@ -147,13 +147,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\BIAI_CLion\Chromosome.cpp" />
-    <ClCompile Include="..\..\..\BIAI_CLion\GraphNode.cpp" />
+    <ClCompile Include="..\..\..\BIAI_CLion\GraphManager.cpp" />
     <ClCompile Include="..\..\..\BIAI_CLion\IGeneticOperator.cpp" />
     <ClCompile Include="..\..\..\BIAI_CLion\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\BIAI_CLion\Chromosome.h" />
-    <ClInclude Include="..\..\..\BIAI_CLion\GraphNode.h" />
+    <ClInclude Include="..\..\..\BIAI_CLion\GraphManager.h" />
     <ClInclude Include="..\..\..\BIAI_CLion\IGeneticOperator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

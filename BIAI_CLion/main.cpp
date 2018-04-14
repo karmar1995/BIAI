@@ -2,19 +2,23 @@
 #include <cstdlib>
 #include <time.h>
 #include "IGeneticOperator.h"
-#include "GraphNode.h"
+#include "GraphManager.h"
 #include <memory>
+#include <algorithm>
+#include <iostream>
+#include <iterator>
 
 int main()
 {
     srand(time(NULL));
-    Chromosome p1 (10);
-    Chromosome p2 (10);
 	std::shared_ptr<ICrossover> crossover (new EdgeCrossover);
 	std::shared_ptr<IMutation> mutator (new ScrambleMutation);
-	ChromosomePair offsprings = crossover->Crossover(std::pair<Chromosome, Chromosome>(p1,p2));
+	ChromosomePair parents = std::make_pair(Chromosome(10), Chromosome(10));
+	ChromosomePair offsprings = crossover->Crossover(parents);
 	offsprings.first.Display();
 	offsprings.second.Display();
+#ifdef _DEBUG
 	system("pause");
+#endif
 	return 0;
 }

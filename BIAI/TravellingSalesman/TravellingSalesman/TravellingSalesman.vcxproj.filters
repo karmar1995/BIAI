@@ -18,13 +18,13 @@
     <ClCompile Include="..\..\..\BIAI_CLion\Chromosome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\BIAI_CLion\GraphNode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\BIAI_CLion\IGeneticOperator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\BIAI_CLion\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\BIAI_CLion\GraphManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +32,10 @@
     <ClInclude Include="..\..\..\BIAI_CLion\Chromosome.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\BIAI_CLion\GraphNode.h">
+    <ClInclude Include="..\..\..\BIAI_CLion\IGeneticOperator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\BIAI_CLion\IGeneticOperator.h">
+    <ClInclude Include="..\..\..\BIAI_CLion\GraphManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

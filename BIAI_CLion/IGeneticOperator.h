@@ -8,7 +8,9 @@
 
 typedef std::map<int, std::vector<int>> EdgeMap;
 typedef std::vector<int> GenesVector;
+typedef GenesVector::iterator GenesIterator;
 typedef GenesVector EdgesVector;
+typedef EdgesVector::iterator EdgesIterator;
 typedef std::pair<Chromosome, Chromosome> ChromosomePair;
 
 class IMutation
@@ -20,7 +22,7 @@ public:
 class ICrossover
 {
 public:
-    virtual std::pair<Chromosome, Chromosome> Crossover(const std::pair<Chromosome, Chromosome>& parents) = 0;
+    virtual ChromosomePair Crossover(const std::pair<Chromosome, Chromosome>& parents) = 0;
 };
 
 class ScrambleMutation: public IMutation
