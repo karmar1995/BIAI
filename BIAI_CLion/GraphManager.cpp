@@ -1,8 +1,16 @@
 #include "GraphManager.h"
 
-GraphNode::GraphNode(uint index)
+#include <fstream>
+#include <sstream>
+#include <string>
+
+GraphNode::GraphNode()
 {
-    m_index = index;
+
+}
+GraphNode::GraphNode(uint index):m_index(index)
+{
+
 }
 
 std::pair<WeightsIterator, bool> GraphNode::putEdge(const uint index, const double weight) 
@@ -25,6 +33,11 @@ uint GraphNode::GetIndex() const
     return m_index;
 }
 
+void GraphNode::SetIndex(uint index)
+{
+	m_index=index;
+}
+
 std::pair<GraphMapIterator, bool> GraphManager::putNode(GraphNode node)
 {
 	return m_NodesMap.insert(std::make_pair(node.GetIndex(), node));
@@ -43,4 +56,35 @@ double GraphManager::getCostForTrace(GenesVector trace) const
 		retVal += m_NodesMap.at(*it).getEdgeWeight(*(it+1));
 	}
 	return retVal;
+}
+
+GraphMap GraphFileParser::ParseFile()
+{
+	std::fstream tsf(m_filepath, std::ios::in);
+	GraphMap map;//KOLUMNY
+	std::string data;
+	uint index = 1;
+	uint node = 1;
+	if (tsf.good()) {
+		std::string item;
+		float weight;
+		while (!tsf.eof()) {
+			std::getline(tsf, data);
+			std::stringstream ss(data);
+			if (map.size()==0) {
+				uint nodes = std::count(data.begin(), data.end(), '\t')+1;
+				for(;nodes>0;nodes--)
+					map[nodes] = GraphNode(nodes);
+			}
+			while (std::getline(ss, item, '\t')) {
+				weight = std::stof(item);
+				map[node].putEdge(index,weight);
+				node++;
+			}
+			node = 1;
+			index++;
+		}
+	}
+	tsf.close();
+	return map;
 }

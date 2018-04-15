@@ -31,11 +31,13 @@ class GraphNode {
     uint m_index;
 	WeightMap m_Weights; //key is an index of neighbour, value - the weight of edge
 public:
-    explicit GraphNode(uint index);
+	GraphNode();
+	explicit GraphNode(uint index);
     std::pair<WeightsIterator, bool> putEdge(const uint index, const double weight);
     std::pair<WeightsIterator, bool> putEdge(const GraphNode& node, const double weight);
 	double getEdgeWeight(const uint& index) const;
     uint GetIndex() const;
+	void SetIndex(uint index);
 };
 
 class GraphManager{

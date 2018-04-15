@@ -1,22 +1,3 @@
-﻿Build started 2018-04-14 01:25:59.
-     1>Project "C:\Users\Karol\Documents\Repositories\BIAI\BIAI\TravellingSalesman\TravellingSalesman\TravellingSalesman.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ..\..\..\BIAI_CLion\IGeneticOperator.cpp
-         IGeneticOperator.cpp
-     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(166): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-         c:\users\karol\documents\repositories\biai\biai_clion\igeneticoperator.cpp(84): note: see reference to function template instantiation 'std::pair<int,int> &std::pair<int,int>::operator =<int,unsigned __int64>(std::pair<int,unsigned __int64> &&)' being compiled
-         c:\users\karol\documents\repositories\biai\biai_clion\igeneticoperator.cpp(84): note: see reference to function template instantiation 'std::pair<int,int> &std::pair<int,int>::operator =<int,unsigned __int64>(std::pair<int,unsigned __int64> &&)' being compiled
-     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(158): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-         c:\users\karol\documents\repositories\biai\biai_clion\igeneticoperator.cpp(84): note: see reference to function template instantiation 'std::pair<int,int>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept' being compiled
-         c:\users\karol\documents\repositories\biai\biai_clion\igeneticoperator.cpp(86): note: see reference to function template instantiation 'std::pair<int,int>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept' being compiled
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\BIAI\BIAI\TravellingSalesman\x64\Debug\TravellingSalesman.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\BIAI\BIAI\TravellingSalesman\x64\Debug\TravellingSalesman.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\BIAI\BIAI\TravellingSalesman\x64\Debug\TravellingSalesman.lib" /MACHINE:X64 x64\Debug\Chromosome.obj
-         x64\Debug\GraphManager.obj
-         x64\Debug\IGeneticOperator.obj
-         x64\Debug\main.obj
-         TravellingSalesman.vcxproj -> C:\Users\Karol\Documents\Repositories\BIAI\BIAI\TravellingSalesman\x64\Debug\TravellingSalesman.exe
-     1>Done Building Project "C:\Users\Karol\Documents\Repositories\BIAI\BIAI\TravellingSalesman\TravellingSalesman\TravellingSalesman.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.83
+﻿  main.cpp
+d:\git\biai\biai_clion\main.cpp(52): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  TravellingSalesman.vcxproj -> D:\git\BIAI\BIAI\TravellingSalesman\x64\Debug\TravellingSalesman.exe
