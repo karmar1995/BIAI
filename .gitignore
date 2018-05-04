@@ -1,6 +1,10 @@
 #visual
 *.sdf
 *.VC.opendb
+*.ipch
+*.tlog
+*.iobj
+*.ipdb
 
 # Prerequisites
 *.d
