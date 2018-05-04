@@ -43,6 +43,7 @@ public:
 class GraphManager{
 	GraphMap m_NodesMap;
 public:
+	GraphManager(GraphMap nodesMap);
 	std::pair<GraphMapIterator, bool> putNode(GraphNode node);
 	void SetMap(GraphMap newMap);
 	double getCostForTrace(GenesVector trace) const;

@@ -15,6 +15,11 @@ Chromosome::Chromosome(std::vector<int> genes)
     m_Genes = genes;
 }
 
+double Chromosome::getFitness() const
+{
+	return m_Fitness;
+}
+
 const std::vector<int> &Chromosome::getGenes() const
 {
     return m_Genes;
@@ -37,6 +42,11 @@ void Chromosome::Display() const
     }
     std::cout<<std::endl;
 
+}
+
+void Chromosome::setFitness(double fitness)
+{
+	m_Fitness = fitness;
 }
 
 int & Chromosome::operator[](int index)

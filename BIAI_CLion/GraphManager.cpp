@@ -38,6 +38,11 @@ void GraphNode::SetIndex(uint index)
 	m_index=index;
 }
 
+GraphManager::GraphManager(GraphMap nodesMap)
+{
+	m_NodesMap = nodesMap;
+}
+
 std::pair<GraphMapIterator, bool> GraphManager::putNode(GraphNode node)
 {
 	return m_NodesMap.insert(std::make_pair(node.GetIndex(), node));
@@ -53,7 +58,8 @@ double GraphManager::getCostForTrace(GenesVector trace) const
 	double retVal = 0.0;
 	for (GenesIterator it = trace.begin(); it < (trace.end()-1); ++it)
 	{
-		retVal += m_NodesMap.at(*it).getEdgeWeight(*(it+1));
+		GraphNode g= m_NodesMap.at(*it);
+		retVal += g.getEdgeWeight(*(it+1));
 	}
 	return retVal;
 }
@@ -78,7 +84,7 @@ GraphMap GraphFileParser::ParseFile()
 			}
 			while (std::getline(ss, item, '\t')) {
 				weight = std::stof(item);
-				map[node].putEdge(index,weight);
+				map[index].putEdge(node,weight);
 				node++;
 			}
 			node = 1;

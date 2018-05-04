@@ -5,6 +5,7 @@
 #include <list>
 #include <iostream>
 #include <iterator>
+#include <ctime>
 
 void PrintMap(EdgeMap edgeMap)
 {
@@ -152,7 +153,9 @@ EdgeMap EdgeCrossover::generateEdgeMap(const ChromosomePair& parents)
 ChromosomePair EdgeCrossover::Crossover(const ChromosomePair& parents)
 {
 	EdgeMap edgeMap = generateEdgeMap(parents);
-    return std::make_pair(createOffspring(parents.first, edgeMap), createOffspring(parents.second, edgeMap));
+	ChromosomePair off = std::make_pair(createOffspring(parents.first, edgeMap), createOffspring(parents.second, edgeMap));
+	
+    return off;
 }
 
 

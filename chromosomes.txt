@@ -1,0 +1,7 @@
+Press any key to continue . . . 
+Input file not defined
+
+Proper program usage: TravellingSalesman <-i File_Path> <-o File_Path> [-t]
+	 -i - Input file location
+	 -o - Output file location
+	 -t - Writes execution time at end of output file

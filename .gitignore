@@ -1,3 +1,7 @@
+#visual
+*.sdf
+*.VC.opendb
+
 # Prerequisites
 *.d
 
