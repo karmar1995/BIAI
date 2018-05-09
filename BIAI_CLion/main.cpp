@@ -21,10 +21,10 @@ void help() {
 \n\t -t - Writes execution time at end of output file\n";
 }
 
-float Operate(std::string input,int nuberOfChromosomes,int numberOfCycles) {
+std::vector<Chromosome> Operate(std::string input,int nuberOfChromosomes,int numberOfCycles) {
 	srand(time(NULL));
 	std::shared_ptr<ICrossover> crossover(new EdgeCrossover);
-	//std::shared_ptr<IMutation> mutator(new ScrambleMutation);
+	std::shared_ptr<IMutation> mutator(new ScrambleMutation);
 	GraphFileParser ts(input);
 	GraphMap map = ts.ParseFile();
 	GraphManager manager(map);
@@ -41,10 +41,11 @@ float Operate(std::string input,int nuberOfChromosomes,int numberOfCycles) {
 	std::sort(Chromosomes.begin(), Chromosomes.end(), Better());
 	Chromosomes.erase(Chromosomes.begin() + nuberOfChromosomes, Chromosomes.end());
 
-	const clock_t begin_time = clock();
 	for (int j = 0; j < numberOfCycles; j++) {
 		for (int i = 0; i < Chromosomes.size(); i++)
 		{
+			if (rand() % 50 == 0)
+				Chromosomes[i] = mutator->Mutate(Chromosomes[i]);
 			ChromosomePair parents = std::make_pair(Chromosomes[i], Chromosomes[i + 1]);
 			ChromosomePair offsprings = crossover->Crossover(parents);
 			Chromosomes[i] = offsprings.first;
@@ -55,7 +56,7 @@ float Operate(std::string input,int nuberOfChromosomes,int numberOfCycles) {
 		}
 		std::sort(Chromosomes.begin(), Chromosomes.end(), Better());
 	}
-	return float(clock() - begin_time) / CLOCKS_PER_SEC;
+	return Chromosomes;
 }
 
 //Generuje przyk³adowe odleg³oœci miast.
@@ -70,14 +71,14 @@ void generateSampleData(int size, std::string outputFile = "out.tsf") {
 				tsf << "0.00 ";
 			}
 			else {
-				tsf << float((rand() % 1000)) / 100 << '\t';
+				tsf << float((rand() % 10000)) / 1000 << '\t';
 			}
 		}
-		tsf << float((rand() % 1000)) / 100 << '\n';
+		tsf << float((rand() % 10000)) / 1000 << '\n';
 	}
 	for (int j = 0; j < size - 1; j++)
 	{
-		tsf << float((rand() % 1000)) / 100 << '\t';
+		tsf << float((rand() % 10000)) / 1000 << '\t';
 	}
 	tsf << "0.00 ";
 	tsf.flush();
@@ -86,6 +87,7 @@ void generateSampleData(int size, std::string outputFile = "out.tsf") {
 
 int main(int argc, char* argv[])
 {
+	const clock_t begin_time = clock();
 	std::string input, output;
 	int cycles, chromosomes, checkSum=0;
 	bool executionTimeRequested = false;
@@ -142,14 +144,22 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
-	float Stoper = Operate(input,chromosomes,cycles);
+	std::vector<Chromosome> &OutputData = Operate(input,chromosomes,cycles);
+
+	for each (Chromosome var in OutputData)
+	{
+		for (auto it = var.getGenes().begin(); it != var.getGenes().end(); ++it)
+			std::cout << *it<< " ";
+		std::cout << var.getFitness() << '\n';
+	}
 
 	if (executionTimeRequested) {
-		std::cout <<"Execution time: " << Stoper << std::endl;
+		std::cout <<"Execution time: " << float(clock() - begin_time) / CLOCKS_PER_SEC << std::endl;
 	}
 
 #ifdef _DEBUG
 	system("pause");
 #endif
+	system("pause");
 	return 0;
 }
