@@ -5,7 +5,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerCommandArguments>-i gen.tsf -o Out.tsf -n 100 -c 100 -t</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>-i gen.tsf -o gen.tsf -n 10 -c 50 -t</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

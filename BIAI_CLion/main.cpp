@@ -13,12 +13,13 @@
 #include <string>
 
 void help() {
-	std::cout << "Proper program usage: TravellingSalesman <-i File_Path> <-o File_Path> [-t]\
+	std::cout << "Proper program usage: TravellingSalesman <-i File_Path> <-> [-o File_Path] [-t]\
 \n\t -i - Input file location\
-\n\t -o - Output file location\
+\n\t -o - Output file location for generation of sample data\
 \n\t -n - Number of iterations\
 \n\t -c - Number of chromosomes\
 \n\t -t - Writes execution time at end of output file\n";
+	system("pause");
 }
 
 std::vector<Chromosome> Operate(std::string input,int nuberOfChromosomes,int numberOfCycles) {
@@ -89,69 +90,62 @@ int main(int argc, char* argv[])
 {
 	const clock_t begin_time = clock();
 	std::string input, output;
-	int cycles, chromosomes, checkSum=0;
+	int cycles=0, chromosomes=0;
 	bool executionTimeRequested = false;
-	if (argc == 10 || argc==9) {
-		for (int i = 1; i < argc; i++)
-		{
-			std::string tmp = argv[i];
-			if (tmp == "-i") {
-				i++;
-				checkSum++;
-				input = argv[i];
-			}
-			else if (tmp == "-o") {
-				i++;
-				checkSum++;
-				output = argv[i];
-			}
-			else if (tmp == "-n") {
-				i++;
-				checkSum++;
-				cycles = std::stoi(argv[i]);
-			}
-			else if (tmp == "-c") {
-				i++;
-				checkSum++;
-				chromosomes = std::stoi(argv[i]);
-			}
-			else if (tmp == "-t") {
-				executionTimeRequested = true;
-			}
+	for (int i = 1; i < argc; i++)
+	{
+		std::string tmp = argv[i];
+		if (tmp == "-i") {
+			i++;
+			input = argv[i];
+		}
+		else if (tmp == "-o") {
+			i++;
+			output = argv[i];
+		}
+		else if (tmp == "-n") {
+			i++;
+			cycles = std::stoi(argv[i]);
+		}
+		else if (tmp == "-c") {
+			i++;
+			chromosomes = std::stoi(argv[i]);
+		}
+		else if (tmp == "-t") {
+			executionTimeRequested = true;
 		}
 	}
-	else {
-		help();
-		system("pause");
-		return 0;
-	}
-	if (checkSum != 4) {
-		help();
-		system("pause");
-		return 0;
-	}
 
-	if (input.empty()) {
+	if (input.empty() && output.empty()) {
 		std::cout << "Input file not defined\n\n";
 		help();
-		system("pause");
 		return 0;
 	}
-	if (output.empty()) {
-		std::cout << "Output file not defined\n\n";
+
+	if (!input.empty() && cycles < 1) {
+		std::cout << "Number of cycles must be > 1\n\n";
 		help();
-		system("pause");
 		return 0;
 	}
+	if (chromosomes < 1) {
+		std::cout << "Number of chromosomes must be > 1\n\n";
+		help();
+		return 0;
+	}
+
+	if (!output.empty()) {
+		generateSampleData(chromosomes);
+		if (input.empty())
+			return 0;
+	}
+
+	
+
 
 	std::vector<Chromosome> &OutputData = Operate(input,chromosomes,cycles);
-
-	for each (Chromosome var in OutputData)
-	{
-		for (auto it = var.getGenes().begin(); it != var.getGenes().end(); ++it)
-			std::cout << *it<< " ";
-		std::cout << var.getFitness() << '\n';
-	}
+	for (auto it = OutputData[0].getGenes().begin(); it != OutputData[0].getGenes().end(); ++it)
+		std::cout << *it<< " ";
+	std::cout << OutputData[0].getFitness() << '\n';
 
 	if (executionTimeRequested) {
 		std::cout <<"Execution time: " << float(clock() - begin_time) / CLOCKS_PER_SEC << std::endl;
@@ -160,6 +154,5 @@ int main(int argc, char* argv[])
 #ifdef _DEBUG
 	system("pause");
 #endif
-	system("pause");
 	return 0;
 }
