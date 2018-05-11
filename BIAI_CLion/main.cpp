@@ -134,7 +134,7 @@ int main(int argc, char* argv[])
 	}
 
 	if (!output.empty()) {
-		generateSampleData(chromosomes);
+		generateSampleData(chromosomes,output);
 		if (input.empty())
 			return 0;
 	}
