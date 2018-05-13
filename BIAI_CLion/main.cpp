@@ -41,7 +41,7 @@ std::vector<Chromosome> Operate(std::string input,int nuberOfChromosomes,int num
 
 	std::sort(Chromosomes.begin(), Chromosomes.end(), Better());
 	Chromosomes.erase(Chromosomes.begin() + nuberOfChromosomes, Chromosomes.end());
-
+	Chromosome best = Chromosomes[0];
 	for (int j = 0; j < numberOfCycles; j++) {
 		for (int i = 0; i < Chromosomes.size(); i++)
 		{
@@ -55,7 +55,12 @@ std::vector<Chromosome> Operate(std::string input,int nuberOfChromosomes,int num
 			Chromosomes[i] = offsprings.second;
 			Chromosomes[i].setFitness(manager.getCostForTrace(Chromosomes[i].getGenes()));
 		}
+		Chromosomes.push_back(best);
 		std::sort(Chromosomes.begin(), Chromosomes.end(), Better());
+		Chromosomes.erase(Chromosomes.begin() + nuberOfChromosomes, Chromosomes.end());
+		if (best.getFitness() < Chromosomes[0].getFitness())
+			best = Chromosomes[0];
+
 	}
 	return Chromosomes;
 }
@@ -69,7 +74,7 @@ void generateSampleData(int size, std::string outputFile = "out.tsf") {
 		for (int j = 0; j < size-1; j++)
 		{
 			if (i == j) {
-				tsf << "0.00 ";
+				tsf << "0.00\t";
 			}
 			else {
 				tsf << float((rand() % 10000)) / 1000 << '\t';
